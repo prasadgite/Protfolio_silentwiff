@@ -3,6 +3,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
   plugins: [
@@ -10,14 +11,17 @@ export default defineConfig({
     tailwindcss(),
 
     tanstackStart({
-      // Preserve the existing custom SSR server entry:
-      // src/server.ts
       server: {
         entry: "server",
       },
     }),
 
-    // Must come after tanstackStart().
+    cloudflare({
+      viteEnvironment: {
+        name: "ssr",
+      },
+    }),
+
     viteReact(),
   ],
 });
