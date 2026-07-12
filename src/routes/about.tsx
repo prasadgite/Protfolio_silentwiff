@@ -61,10 +61,7 @@ function AboutPage() {
           Consistent across the entire page.
       ========================================================= */}
 
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-background/55"
-      />
+      <div aria-hidden="true" className="absolute inset-0 -z-20 bg-background/55" />
 
       {/* =========================================================
           GLOBAL READABILITY GRADIENT
@@ -119,14 +116,14 @@ function AboutPage() {
               <div className="mb-5 text-eyebrow">§ 01 / ABOUT</div>
 
               <h1 className="text-4xl font-normal leading-[1.04] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                Software engineer working across ML systems, algorithms, and
-                data-intensive infrastructure.
+                Software engineer working across ML systems, algorithms, and data-intensive
+                infrastructure.
               </h1>
 
               <p className="mt-7 max-w-xl text-base leading-relaxed text-foreground-secondary md:text-lg">
-                I build systems where algorithms, machine learning, and
-                infrastructure meet — with an emphasis on measurable behavior,
-                explicit engineering decisions, and production constraints.
+                I build systems where algorithms, machine learning, and infrastructure meet — with
+                an emphasis on measurable behavior, explicit engineering decisions, and production
+                constraints.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3 font-mono text-[11px] uppercase tracking-[0.14em] text-foreground-muted">
@@ -161,27 +158,23 @@ function AboutPage() {
             <div className="max-w-3xl">
               <div className="prose-editorial">
                 <p>
-                  My work sits between three layers: the algorithms that decide
-                  what a system does, the ML models that let it adapt, and the
-                  infrastructure that lets it operate reliably at real-world
-                  scale.
+                  My work sits between three layers: the algorithms that decide what a system does,
+                  the ML models that let it adapt, and the infrastructure that lets it operate
+                  reliably at real-world scale.
                 </p>
 
                 <p>
-                  I hold a Bachelor of Technology from Vishwakarma Institute of
-                  Technology, Pune (2021–2025), and am currently pursuing
-                  graduate studies in Data Science. Most recently I led
-                  machine-learning engineering at Aurum Innovations, where I
-                  built computer vision pipelines and inference infrastructure
-                  end-to-end.
+                  I hold a Bachelor of Technology from Vishwakarma Institute of Technology, Pune
+                  (2021–2025), and am currently pursuing graduate studies in Data Science. Most
+                  recently I led machine-learning engineering at Aurum Innovations, where I built
+                  computer vision pipelines and inference infrastructure end-to-end.
                 </p>
 
                 <p>
-                  My trajectory has moved from application development toward
-                  ML systems, algorithms, quantitative computing, and
-                  high-performance systems. I am currently focused on modern
-                  C++, advanced algorithms, and the systems engineering that
-                  sits underneath production ML.
+                  My trajectory has moved from application development toward ML systems,
+                  algorithms, quantitative computing, and high-performance systems. I am currently
+                  focused on modern C++, advanced algorithms, and the systems engineering that sits
+                  underneath production ML.
                 </p>
               </div>
             </div>
@@ -201,22 +194,19 @@ function AboutPage() {
             <div className="max-w-3xl">
               <div className="border-t border-border/70">
                 <Principle index="01" title="Baselines before hero models.">
-                  An interpretable baseline establishes whether additional model
-                  complexity is justified. On FlowVest, ARIMA provides the
-                  always-on baseline before an account becomes eligible for the
-                  LSTM path.
+                  An interpretable baseline establishes whether additional model complexity is
+                  justified. On FlowVest, ARIMA provides the always-on baseline before an account
+                  becomes eligible for the LSTM path.
                 </Principle>
 
                 <Principle index="02" title="Evidence over claims.">
-                  Capabilities should map to projects, engineering decisions,
-                  benchmarks, or measurable outcomes. Unsupported claims do not
-                  belong in the portfolio.
+                  Capabilities should map to projects, engineering decisions, benchmarks, or
+                  measurable outcomes. Unsupported claims do not belong in the portfolio.
                 </Principle>
 
                 <Principle index="03" title="Systems, not scripts.">
-                  Production ML includes preprocessing, inference, data
-                  movement, observability, failure handling, and operational
-                  constraints — not only the model artifact.
+                  Production ML includes preprocessing, inference, data movement, observability,
+                  failure handling, and operational constraints — not only the model artifact.
                 </Principle>
               </div>
             </div>
@@ -235,8 +225,8 @@ function AboutPage() {
               <div className="text-eyebrow">§ 04 / CAPABILITY MATRIX</div>
 
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground-secondary">
-                Technical domains mapped to the technologies used and the work
-                that provides evidence for each capability.
+                Technical domains mapped to the technologies used and the work that provides
+                evidence for each capability.
               </p>
             </div>
 
@@ -276,9 +266,7 @@ function AboutPage() {
                 </div>
 
                 <div className="md:px-4 md:py-4">
-                  <div className="mb-2 text-eyebrow md:hidden">
-                    TECHNOLOGIES
-                  </div>
+                  <div className="mb-2 text-eyebrow md:hidden">TECHNOLOGIES</div>
 
                   <div className="text-sm leading-relaxed text-foreground-secondary">
                     {capability.technologies.join(", ")}
@@ -324,9 +312,8 @@ function AboutPage() {
 
             <div className="max-w-3xl">
               <p className="text-lg leading-relaxed text-foreground-secondary">
-                Interested in ML systems, algorithmic infrastructure,
-                quantitative computing, or performance-oriented engineering
-                work?
+                Interested in ML systems, algorithmic infrastructure, quantitative computing, or
+                performance-oriented engineering work?
               </p>
 
               <div className="mt-6">
@@ -344,8 +331,7 @@ function AboutPage() {
                   </a>
                 ) : (
                   <p className="text-sm text-foreground-muted">
-                    Email pending — reach out via GitHub or LinkedIn in the
-                    footer.
+                    Email pending — reach out via GitHub or LinkedIn in the footer.
                   </p>
                 )}
               </div>
@@ -368,16 +354,12 @@ function Principle({
 }) {
   return (
     <div className="grid gap-4 border-b border-border/70 py-8 last:border-b-0 sm:grid-cols-[48px_minmax(0,1fr)]">
-      <div className="font-mono text-[11px] tracking-[0.14em] text-foreground-muted">
-        {index}
-      </div>
+      <div className="font-mono text-[11px] tracking-[0.14em] text-foreground-muted">{index}</div>
 
       <div>
         <h2 className="text-lg font-normal text-foreground">{title}</h2>
 
-        <p className="mt-3 leading-relaxed text-foreground-secondary">
-          {children}
-        </p>
+        <p className="mt-3 leading-relaxed text-foreground-secondary">{children}</p>
       </div>
     </div>
   );
