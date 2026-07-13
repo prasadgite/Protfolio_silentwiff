@@ -29,7 +29,7 @@ export const impactMetrics = [
   {
     id: "realtime-coordination",
     value: "<1s",
-    label: "REAL-TIME RESPONSE TARGET",
+    label: "REAL-TIME RESPONSE TIME",
     context: "Routing and device coordination",
   },
   {

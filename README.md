@@ -9,8 +9,8 @@
 <br />
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-LIVE_SITE-111111?style=for-the-badge)](#)
-[![GitHub](https://img.shields.io/badge/GITHUB-prasadgite-181717?style=for-the-badge\&logo=github)](https://github.com/prasadgite)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-CONNECT-0A66C2?style=for-the-badge\&logo=linkedin)](#)
+[![GitHub](https://img.shields.io/badge/GITHUB-prasadgite-181717?style=for-the-badge&logo=github)](https://github.com/prasadgite)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-CONNECT-0A66C2?style=for-the-badge&logo=linkedin)](#)
 
 </div>
 
@@ -26,14 +26,14 @@ The interface follows a restrained visual system influenced by engineering dashb
 
 The implementation prioritizes:
 
-* clear information hierarchy;
-* maintainable component boundaries;
-* structured content management;
-* responsive behavior across viewport sizes;
-* accessibility-aware interaction patterns;
-* predictable styling conventions;
-* minimal unnecessary abstraction;
-* production-oriented frontend practices.
+- clear information hierarchy;
+- maintainable component boundaries;
+- structured content management;
+- responsive behavior across viewport sizes;
+- accessibility-aware interaction patterns;
+- predictable styling conventions;
+- minimal unnecessary abstraction;
+- production-oriented frontend practices.
 
 ---
 
@@ -59,18 +59,18 @@ The implementation prioritizes:
 
 ### CORE
 
-![TypeScript](https://img.shields.io/badge/TypeScript-111111?style=flat-square\&logo=typescript)
-![React](https://img.shields.io/badge/React-111111?style=flat-square\&logo=react)
-![TanStack](https://img.shields.io/badge/TanStack-111111?style=flat-square\&logo=reactquery)
-![Vite](https://img.shields.io/badge/Vite-111111?style=flat-square\&logo=vite)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-111111?style=flat-square\&logo=tailwindcss)
+![TypeScript](https://img.shields.io/badge/TypeScript-111111?style=flat-square&logo=typescript)
+![React](https://img.shields.io/badge/React-111111?style=flat-square&logo=react)
+![TanStack](https://img.shields.io/badge/TanStack-111111?style=flat-square&logo=reactquery)
+![Vite](https://img.shields.io/badge/Vite-111111?style=flat-square&logo=vite)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-111111?style=flat-square&logo=tailwindcss)
 
 ### ENGINEERING TOOLING
 
-![ESLint](https://img.shields.io/badge/ESLint-111111?style=flat-square\&logo=eslint)
-![Prettier](https://img.shields.io/badge/Prettier-111111?style=flat-square\&logo=prettier)
-![Git](https://img.shields.io/badge/Git-111111?style=flat-square\&logo=git)
-![GitHub](https://img.shields.io/badge/GitHub-111111?style=flat-square\&logo=github)
+![ESLint](https://img.shields.io/badge/ESLint-111111?style=flat-square&logo=eslint)
+![Prettier](https://img.shields.io/badge/Prettier-111111?style=flat-square&logo=prettier)
+![Git](https://img.shields.io/badge/Git-111111?style=flat-square&logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-111111?style=flat-square&logo=github)
 
 ---
 
@@ -281,13 +281,13 @@ The quality model can be extended with automated testing and continuous integrat
 
 The portfolio intentionally avoids:
 
-* unnecessary runtime dependencies;
-* excessive animation;
-* decorative interfaces that compete with project content;
-* large global state-management systems without application-level justification;
-* duplicated portfolio content across presentation components;
-* generic component abstractions introduced before repeated use cases exist;
-* misleading engineering metrics or unsupported performance claims.
+- unnecessary runtime dependencies;
+- excessive animation;
+- decorative interfaces that compete with project content;
+- large global state-management systems without application-level justification;
+- duplicated portfolio content across presentation components;
+- generic component abstractions introduced before repeated use cases exist;
+- misleading engineering metrics or unsupported performance claims.
 
 These constraints keep the repository focused on maintainability, clarity, and verifiable implementation quality.
 
@@ -330,15 +330,15 @@ Branch protection, automated continuous integration, and deployment validation c
 
 The repository can evolve incrementally through:
 
-* automated CI validation;
-* branch protection and required status checks;
-* automated deployment workflows;
-* unit testing for deterministic application logic;
-* component and integration testing for critical interaction paths;
-* automated accessibility validation;
-* Lighthouse-based performance regression tracking;
-* structured project case studies;
-* richer project-level engineering documentation.
+- automated CI validation;
+- branch protection and required status checks;
+- automated deployment workflows;
+- unit testing for deterministic application logic;
+- component and integration testing for critical interaction paths;
+- automated accessibility validation;
+- Lighthouse-based performance regression tracking;
+- structured project case studies;
+- richer project-level engineering documentation.
 
 Roadmap items are introduced only when implemented and maintained as part of the repository workflow.
 

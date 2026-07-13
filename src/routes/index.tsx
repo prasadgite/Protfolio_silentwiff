@@ -161,7 +161,7 @@ function Index() {
                       variants={shouldReduceMotion ? undefined : heroLineVariants}
                       className="block"
                     >
-                      CTRL yourself,
+                      REMEMBER,
                     </motion.span>
                   </span>
 
@@ -170,7 +170,7 @@ function Index() {
                       variants={shouldReduceMotion ? undefined : heroLineVariants}
                       className="block text-foreground-muted"
                     >
-                      Alter your thinking,
+                      WHO YOU,
                     </motion.span>
                   </span>
 
@@ -179,7 +179,7 @@ function Index() {
                       variants={shouldReduceMotion ? undefined : heroLineVariants}
                       className="block"
                     >
-                      Delete negativity.
+                      WANTED TO BE.
                     </motion.span>
                   </span>
                 </motion.h1>
@@ -382,7 +382,6 @@ function Index() {
         </div>
       </Section>
 
-      {/* Impact */}
       {/* Impact */}
       <ImpactSection />
 

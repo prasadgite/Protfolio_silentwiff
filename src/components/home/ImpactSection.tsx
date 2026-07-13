@@ -8,7 +8,7 @@ const impactGridVariants: Variants = {
 
   visible: {
     transition: {
-      staggerChildren: 0.06,
+      staggerChildren: 0.04,
       delayChildren: 0.05,
     },
   },
@@ -17,7 +17,7 @@ const impactGridVariants: Variants = {
 const impactCardVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 14,
+    y: 8,
   },
 
   visible: {
@@ -25,7 +25,7 @@ const impactCardVariants: Variants = {
     y: 0,
 
     transition: {
-      duration: 0.45,
+      duration: 0.4,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -45,39 +45,39 @@ export function ImpactSection() {
           once: true,
           amount: 0.2,
         }}
-        className={[
-          "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3",
-          "gap-px border border-border bg-border",
-        ].join(" ")}
+        className="grid grid-cols-1 md:grid-cols-2"
       >
-        {impactMetrics.map((metric) => (
-          <motion.div
-            key={metric.id}
-            variants={shouldReduceMotion ? undefined : impactCardVariants}
-            className={[
-              "group bg-background p-6 md:p-8",
-              "transition-colors duration-200",
-              "motion-reduce:transition-none",
-              "[@media(hover:hover)]:hover:bg-background-elevated/40",
-            ].join(" ")}
-          >
-            <div
+        {impactMetrics.map((metric, index) => {
+          const isLastMetric = index === impactMetrics.length - 1;
+          const isInLastDesktopRow = index >= impactMetrics.length - 2;
+
+          return (
+            <motion.div
+              key={metric.id}
+              variants={shouldReduceMotion ? undefined : impactCardVariants}
               className={[
-                "text-4xl font-normal tracking-[-0.03em] md:text-5xl",
-                "text-foreground",
-                "transition-colors duration-200",
-                "motion-reduce:transition-none",
-                "[@media(hover:hover)]:group-hover:text-accent",
+                "py-6 md:py-8",
+                "md:odd:pr-8 md:even:pl-8",
+
+                // Mobile: separator after every metric except the final one.
+                !isLastMetric ? "border-b border-border" : "",
+
+                // Desktop: the final row has no bottom separator.
+                isInLastDesktopRow ? "md:border-b-0" : "",
               ].join(" ")}
             >
-              {metric.value}
-            </div>
+              <div className="text-3xl font-normal tracking-[-0.03em] text-foreground md:text-4xl">
+                {metric.value}
+              </div>
 
-            <div className="mt-3 text-eyebrow">{metric.label}</div>
+              <div className="mt-2 text-eyebrow">{metric.label}</div>
 
-            <div className="mt-2 text-xs text-foreground-muted">{metric.context}</div>
-          </motion.div>
-        ))}
+              <div className="mt-1.5 max-w-md text-xs leading-relaxed text-foreground-muted">
+                {metric.context}
+              </div>
+            </motion.div>
+          );
+        })}
       </motion.div>
     </Section>
   );

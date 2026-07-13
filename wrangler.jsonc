@@ -1,9 +1,7 @@
 {
-    "$schema": "./node_modules/wrangler/config-schema.json",
-    "name": "silentwiff",
-    "compatibility_date": "2026-07-12",
-    "compatibility_flags": [
-        "nodejs_compat"
-    ],
-    "main": "./src/server.ts"
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "silentwiff",
+  "compatibility_date": "2026-07-12",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./src/server.ts",
 }
