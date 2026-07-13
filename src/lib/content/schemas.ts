@@ -86,19 +86,51 @@ export const NoteSchema = z.object({
 export type Note = z.infer<typeof NoteSchema>;
 
 export const LabEntrySchema = z.object({
+  // Identity
+
   slug: z.string(),
   identifier: z.string(),
   title: z.string(),
   description: z.string(),
+  summary: z.string().optional(),
+
+  // Classification
+
   domain: DomainSchema,
   domainLabel: z.string(),
   tags: z.array(z.string()),
   technologies: z.array(z.string()),
+
+  // Lifecycle
+
   status: StatusSchema,
   createdAt: z.string(),
   updatedAt: z.string().optional(),
-  repository: z.string().optional(),
+
+  // Experiment definition
+
+  objective: z.string().optional(),
+  hypothesis: z.string().optional(),
+
+  // Experiment execution
+
+  setup: z.array(z.string()).default([]),
+  methodology: z.array(z.string()).default([]),
+  implementation: z.array(z.string()).default([]),
+  measurements: z.array(z.string()).default([]),
+
+  // Experiment outputs
+
+  results: z.array(MetricSchema).default([]),
+  observations: z.array(z.string()).default([]),
+  limitations: z.array(z.string()).default([]),
+  nextSteps: z.array(z.string()).default([]),
+
+  // Additional metadata
+
   complexity: z.string().optional(),
+  repository: z.string().optional(),
+
   draft: z.boolean().default(false),
 });
 export type LabEntry = z.infer<typeof LabEntrySchema>;

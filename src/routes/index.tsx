@@ -122,6 +122,31 @@ const heroLineVariants: Variants = {
   },
 };
 
+/*lab consts*/
+const labPreviewContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const labPreviewRowVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -161,7 +186,7 @@ function Index() {
                       variants={shouldReduceMotion ? undefined : heroLineVariants}
                       className="block"
                     >
-                      REMEMBER,
+                      <span className="text-accent">REMEMBER</span>,
                     </motion.span>
                   </span>
 
@@ -170,7 +195,7 @@ function Index() {
                       variants={shouldReduceMotion ? undefined : heroLineVariants}
                       className="block text-foreground-muted"
                     >
-                      WHO YOU,
+                      who <span className="text-accent">YOU</span>,
                     </motion.span>
                   </span>
 
@@ -179,7 +204,7 @@ function Index() {
                       variants={shouldReduceMotion ? undefined : heroLineVariants}
                       className="block"
                     >
-                      WANTED TO BE.
+                      wanted to <span className="text-accent">BE</span>.
                     </motion.span>
                   </span>
                 </motion.h1>
@@ -390,33 +415,111 @@ function Index() {
         eyebrow="§ 04 / LAB"
         title="Recent lab entries"
         aside={
-          <Link to="/lab" className="hover:text-foreground">
+          <Link
+            to="/lab"
+            className={[
+              "font-mono text-[11px] uppercase tracking-[0.14em]",
+              "text-foreground-muted transition-colors",
+              "hover:text-foreground",
+              "focus-visible:outline-none",
+              "focus-visible:ring-1 focus-visible:ring-accent",
+            ].join(" ")}
+          >
             ALL LAB →
           </Link>
         }
       >
-        <div className="divide-y divide-border border-y border-border">
-          {recentLab.map((entry) => (
-            <Link
+        <motion.div
+          variants={shouldReduceMotion ? undefined : labPreviewContainerVariants}
+          initial={shouldReduceMotion ? false : "hidden"}
+          whileInView={shouldReduceMotion ? undefined : "visible"}
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+          className="border-y border-border"
+        >
+          {recentLab.map((entry, index) => (
+            <motion.div
               key={entry.slug}
-              to="/lab/$slug"
-              params={{ slug: entry.slug }}
-              className="group -mx-6 grid gap-4 px-6 py-6 transition-colors hover:bg-background-elevated/40 md:-mx-10 md:grid-cols-[100px_1fr_auto] md:gap-8 md:px-10"
+              variants={shouldReduceMotion ? undefined : labPreviewRowVariants}
+              className="border-b border-border last:border-b-0"
             >
-              <div className="font-mono text-sm text-foreground-muted">{entry.identifier}</div>
+              <Link
+                to="/lab/$slug"
+                params={{ slug: entry.slug }}
+                className={[
+                  "group relative -mx-6 grid gap-5 overflow-hidden px-6 py-7",
+                  "transition-colors duration-200",
+                  "hover:bg-background-elevated/40",
+                  "focus-visible:outline-none",
+                  "focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-accent",
+                  "md:-mx-10",
+                  "md:grid-cols-[110px_minmax(0,1fr)_150px_28px]",
+                  "md:items-start md:gap-8 md:px-10",
+                ].join(" ")}
+              >
+                <div className="flex items-start justify-between gap-4 md:block">
+                  <div>
+                    <div className="font-mono text-sm text-foreground-muted">
+                      {entry.identifier}
+                    </div>
 
-              <div>
-                <div className="text-foreground group-hover:text-accent">{entry.title}</div>
+                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-muted">
+                      {String(index + 1).padStart(2, "0")} /{" "}
+                      {String(recentLab.length).padStart(2, "0")}
+                    </div>
+                  </div>
 
-                <div className="mt-1 text-sm text-foreground-secondary">{entry.description}</div>
-              </div>
+                  <span
+                    aria-hidden="true"
+                    className={[
+                      "font-mono text-sm text-foreground-muted",
+                      "transition-transform duration-200",
+                      "group-hover:translate-x-1 group-hover:text-accent",
+                      "md:hidden",
+                    ].join(" ")}
+                  >
+                    →
+                  </span>
+                </div>
 
-              <div className="flex md:justify-end">
-                <StatusIndicator status={entry.status} />
-              </div>
-            </Link>
+                <div className="min-w-0">
+                  <h3 className="text-lg font-normal tracking-tight text-foreground transition-colors group-hover:text-accent md:text-xl">
+                    {entry.title}
+                  </h3>
+
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground-secondary">
+                    {entry.description}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-start gap-x-4 gap-y-3 md:block md:text-right">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-foreground-muted">
+                    {entry.domainLabel}
+                  </div>
+
+                  <div className="md:mt-3 md:flex md:justify-end">
+                    <StatusIndicator status={entry.status} />
+                  </div>
+                </div>
+
+                <div className="hidden justify-end md:flex">
+                  <span
+                    aria-hidden="true"
+                    className={[
+                      "font-mono text-sm text-foreground-muted",
+                      "transition-transform duration-200",
+                      "group-hover:translate-x-1 group-hover:text-accent",
+                    ].join(" ")}
+                  >
+                    →
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Section>
 
       {/* Recent notes */}
